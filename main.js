@@ -5,7 +5,7 @@ var player = {
   height: 30,
   x: 200,
   y: 515,
-  speed: 5,
+  speed: 3,
   color: "#4A92F8",
   status: 0,
 };
