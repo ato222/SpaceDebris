@@ -5,7 +5,7 @@ var player = {
   height: 30,
   x: 200,
   y: 515,
-  speed: 2,
+  speed: 5,
   color: "#4A92F8",
   status: 0,
 };
@@ -164,16 +164,15 @@ function moveEnemies ()
       enemies[i].reward = 0;
       enemies[i].highSpeed = false;
 
-      // For creating extreme enemy
       createExtremeEnemy(enemies, i);
     }
   }
 }
 
 function createExtremeEnemy(enemies, i) {
-    if (i === 0 && getRandomTrueOrFalse()) {
+    if ((i >= 0 && i <= 10) && getRandomTrueOrFalse()) {
       enemies[i].x = getRandomArbitrary(player.x-100-player.width, player.x+100+player.width);
-      enemies[i].speed = getRandomArbitrary(5, 8);
+      enemies[i].speed = getRandomArbitrary(5, 12);
       enemies[i].color = 'red';
       enemies[i].highSpeed = true;
     }
@@ -479,8 +478,8 @@ function addEnemy () {
 
 function createEnemy () {
   var enemy = {
-    width: getRandomArbitrary(10, 70),
-    height: getRandomArbitrary(10, 70),
+    width: getRandomArbitrary(10, 150),
+    height: getRandomArbitrary(10, 150),
     speed: getRandomArbitrary(0.5, 3),
     x: getRandomArbitrary(0, canvas.width),
     y: getRandomArbitrary(-100, -150),
