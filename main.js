@@ -274,6 +274,7 @@ function collisionCheck ()
             ((Math.abs(enemyCenterX - playerHodaiCenterX) < player.width/3/2 + enemies[i].width/2) &&
               (Math.abs(enemyCenterY - playerHodaiCenterY) < player.height/3/2 + enemies[i].height/2)) &&
                 enemies[i].status === 0) {
+                  drawFillRect(0, 0, canvas.width, canvas.height, "red");
                   gameOver();
     }
   }
@@ -392,6 +393,7 @@ function shootCollisionCheck() {
               (Math.abs(enemyCenterY - bulletCenterY) < bullets[i].height/2 + enemies[j].height/2)) &&
                   enemies[j].status === 0) {
           // hittingSound.play();
+          drawFillRect(0, 0, canvas.width, canvas.height, "gray");
           enemies[j].status = 1;
           bullets.splice(i, 1);
           addEnemy();
